@@ -1825,6 +1825,30 @@ public class SVG
       Length  rx;
       Length  ry;
 
+      public Length getX() {
+         return x;
+      }
+
+      public Length getY() {
+         return y;
+      }
+
+      public Length getWidth() {
+         return width;
+      }
+
+      public Length getHeight() {
+         return height;
+      }
+
+      public Length getRx() {
+         return rx;
+      }
+
+      public Length getRy() {
+         return ry;
+      }
+
       @Override
       String  getNodeName() { return "rect"; }
    }
@@ -1860,6 +1884,22 @@ public class SVG
       Length  rx;
       Length  ry;
 
+      public Length getCx() {
+         return cx;
+      }
+
+      public Length getCy() {
+         return cy;
+      }
+
+      public Length getRx() {
+         return rx;
+      }
+
+      public Length getRy() {
+         return ry;
+      }
+
       @Override
       String  getNodeName() { return "ellipse"; }
    }
@@ -1871,6 +1911,22 @@ public class SVG
       Length  y1;
       Length  x2;
       Length  y2;
+
+      public Length getX1() {
+         return x1;
+      }
+
+      public Length getY1() {
+         return y1;
+      }
+
+      public Length getX2() {
+         return x2;
+      }
+
+      public Length getY2() {
+         return y2;
+      }
 
       @Override
       String  getNodeName() { return "line"; }
