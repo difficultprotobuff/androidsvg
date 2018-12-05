@@ -45,17 +45,17 @@ import java.util.Set;
  * <p>
  * Typically, you will call one of the SVG loading and parsing classes then call the renderer,
  * passing it a canvas to draw upon.
- * 
+ *
  * <h3>Usage summary</h3>
- * 
+ *
  * <ul>
  * <li>Use one of the static {@code getFromX()} methods to read and parse the SVG file.  They will
  * return an instance of this class.
  * <li>Call one of the {@code renderToX()} methods to render the document.
  * </ul>
- * 
+ *
  * <h3>Usage example</h3>
- * 
+ *
  * <pre>
  * {@code
  * SVG.registerExternalFileResolver(myResolver);
@@ -69,7 +69,7 @@ import java.util.Set;
  * svg.renderToCanvas(bmcanvas);
  * }
  * </pre>
- * 
+ *
  * For more detailed information on how to use this library, see the documentation at {@code http://code.google.com/p/androidsvg/}
  */
 
@@ -138,7 +138,7 @@ public class SVG
 
    /**
     * Read and parse an SVG from the given {@code InputStream}.
-    * 
+    *
     * @param is the input stream from which to read the file.
     * @return an SVG instance on which you can call one of the render methods.
     * @throws SVGParseException if there is an error parsing the document.
@@ -153,7 +153,7 @@ public class SVG
 
    /**
     * Read and parse an SVG from the given {@code String}.
-    * 
+    *
     * @param svg the String instance containing the SVG document.
     * @return an SVG instance on which you can call one of the render methods.
     * @throws SVGParseException if there is an error parsing the document.
@@ -168,7 +168,7 @@ public class SVG
 
    /**
     * Read and parse an SVG from the given resource location.
-    * 
+    *
     * @param context the Android context of the resource.
     * @param resourceId the resource identifier of the SVG document.
     * @return an SVG instance on which you can call one of the render methods.
@@ -209,7 +209,7 @@ public class SVG
 
    /**
     * Read and parse an SVG from the assets folder.
-    * 
+    *
     * @param assetManager the AssetManager instance to use when reading the file.
     * @param filename the filename of the SVG document within assets.
     * @return an SVG instance on which you can call one of the render methods.
@@ -284,7 +284,7 @@ public class SVG
     * changed to a static method so that users can resolve external references to CSSS files while
     * the SVG is being parsed.</em>
     * </p>
-    * 
+    *
     * @param fileResolver the resolver to use.
     * @since 1.3
     */
@@ -311,7 +311,7 @@ public class SVG
     * <p>
     * You should not normally need to alter the DPI from the default of 96 as recommended by the SVG
     * and CSS specifications.
-    *  
+    *
     * @param dpi the DPI value that the renderer should use.
     */
    @SuppressWarnings({"WeakerAccess", "unused"})
@@ -341,7 +341,7 @@ public class SVG
     * <p>
     * An attempt will be made to determine a suitable initial viewport from the contents of the SVG file.
     * If an appropriate viewport can't be determined, a default viewport of 512x512 will be used.
-    * 
+    *
     * @return a Picture object suitable for later rendering using {@code Canvas.drawPicture()}
     */
    @SuppressWarnings("WeakerAccess")
@@ -353,7 +353,7 @@ public class SVG
 
    /**
     * Renders this SVG document to a {@link Picture}.
-    * 
+    *
     * @param widthInPixels the width of the initial viewport
     * @param heightInPixels the height of the initial viewport
     * @return a Picture object suitable for later rendering using {@link Canvas#drawPicture(Picture)}
@@ -452,7 +452,7 @@ public class SVG
     * Calling this method with a {@code viewId} will result in the specified view being positioned and scaled
     * to the viewport.  In other words, use {@link #renderToPicture()} to render the whole document, or use this
     * method instead to render just a part of it.
-    * 
+    *
     * @param viewId the id of a view element in the document that defines which section of the document is to be visible.
     * @param widthInPixels the width of the initial viewport
     * @param heightInPixels the height of the initial viewport
@@ -484,7 +484,7 @@ public class SVG
    /**
     * Renders this SVG document to a Canvas object.  The full width and height of the canvas
     * will be used as the viewport into which the document will be rendered.
-    * 
+    *
     * @param canvas the canvas to which the document should be rendered.
     * @since 1.3
     */
@@ -497,7 +497,7 @@ public class SVG
 
    /**
     * Renders this SVG document to a Canvas object.
-    * 
+    *
     * @param canvas the canvas to which the document should be rendered.
     * @param viewPort the bounds of the area on the canvas you want the SVG rendered, or null for the whole canvas.
     */
@@ -570,7 +570,7 @@ public class SVG
     * method instead to render just a part of it.
     * <p>
     * If the {@code <view>} could not be found, nothing will be drawn.
-    * 
+    *
     * @param viewId the id of a view element in the document that defines which section of the document is to be visible.
     * @param canvas the canvas to which the document should be rendered.
     * @param viewPort the bounds of the area on the canvas you want the SVG rendered, or null for the whole canvas.
@@ -594,7 +594,7 @@ public class SVG
 
    /**
     * Returns the version number of this library.
-    * 
+    *
     * @return the version number in string format
     */
    @SuppressWarnings({"WeakerAccess", "unused"})
@@ -606,7 +606,7 @@ public class SVG
 
    /**
     * Returns the contents of the {@code <title>} element in the SVG document.
-    * 
+    *
     * @return title contents if available, otherwise an empty string.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -622,7 +622,7 @@ public class SVG
 
    /**
     * Returns the contents of the {@code <desc>} element in the SVG document.
-    * 
+    *
     * @return desc contents if available, otherwise an empty string.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -638,7 +638,7 @@ public class SVG
 
    /**
     * Returns the SVG version number as provided in the root {@code <svg>} tag of the document.
-    * 
+    *
     * @return the version string if declared, otherwise an empty string.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -656,7 +656,7 @@ public class SVG
     * Returns a list of ids for all {@code <view>} elements in this SVG document.
     * <p>
     * The returned view ids could be used when calling and of the {@code renderViewToX()} methods.
-    * 
+    *
     * @return the list of id strings.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -689,7 +689,7 @@ public class SVG
     * {@code RenderDPI} value will be used to convert that value to pixels. If the width
     * is missing, or in a form which can't be converted to pixels, such as "100%" for
     * example, -1 will be returned.
-    *  
+    *
     * @return the width in pixels, or -1 if there is no width available.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -706,7 +706,7 @@ public class SVG
    /**
     * Change the width of the document by altering the "width" attribute
     * of the root {@code <svg>} element.
-    * 
+    *
     * @param pixels The new value of width in pixels.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -723,7 +723,7 @@ public class SVG
    /**
     * Change the width of the document by altering the "width" attribute
     * of the root {@code <svg>} element.
-    * 
+    *
     * @param value A valid SVG 'length' attribute, such as "100px" or "10cm".
     * @throws SVGParseException if {@code value} cannot be parsed successfully.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
@@ -746,7 +746,7 @@ public class SVG
     * {@code RenderDPI} value will be used to convert that value to pixels. If the height
     * is missing, or in a form which can't be converted to pixels, such as "100%" for
     * example, -1 will be returned.
-    *  
+    *
     * @return the height in pixels, or -1 if there is no height available.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -763,7 +763,7 @@ public class SVG
    /**
     * Change the height of the document by altering the "height" attribute
     * of the root {@code <svg>} element.
-    * 
+    *
     * @param pixels The new value of height in pixels.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -780,7 +780,7 @@ public class SVG
    /**
     * Change the height of the document by altering the "height" attribute
     * of the root {@code <svg>} element.
-    * 
+    *
     * @param value A valid SVG 'length' attribute, such as "100px" or "10cm".
     * @throws SVGParseException if {@code value} cannot be parsed successfully.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
@@ -806,7 +806,7 @@ public class SVG
     * <p>
     * By setting a viewBox that describes only a portion of the document,
     * you can reproduce the effect of image sprites.
-    * 
+    *
     * @param minX the left coordinate of the viewBox in pixels
     * @param minY the top coordinate of the viewBox in pixels.
     * @param width the width of the viewBox in pixels
@@ -825,7 +825,7 @@ public class SVG
 
    /**
     * Returns the viewBox attribute of the current SVG document.
-    * 
+    *
     * @return the document's viewBox attribute as a {@code android.graphics.RectF} object, or null if not set.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -838,7 +838,7 @@ public class SVG
       if (this.rootElement.viewBox == null)
          return null;
 
-      return this.rootElement.viewBox.toRectF();       
+      return this.rootElement.viewBox.toRectF();
    }
 
 
@@ -847,7 +847,7 @@ public class SVG
     * attribute of the root {@code <svg>} element.  See the
     * documentation for {@link PreserveAspectRatio} for more information
     * on how positioning works.
-    * 
+    *
     * @param preserveAspectRatio the new {@code preserveAspectRatio} setting for the root {@code <svg>} element.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -864,7 +864,7 @@ public class SVG
    /**
     * Return the "preserveAspectRatio" attribute of the root {@code <svg>}
     * element in the form of an {@link PreserveAspectRatio} object.
-    * 
+    *
     * @return the preserveAspectRatio setting of the document's root {@code <svg>} element.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -888,7 +888,7 @@ public class SVG
     * then the current {@code renderDPI} setting will be used to convert that value to pixels.
     * <p>
     * If the width or height cannot be determined, -1 will be returned.
-    * 
+    *
     * @return the aspect ratio as a width/height fraction, or -1 if the ratio cannot be determined.
     * @throws IllegalArgumentException if there is no current SVG document loaded.
     */
@@ -923,7 +923,7 @@ public class SVG
    //===============================================================================
 
 
-   SVG.Svg  getRootElement()
+   public SVG.Svg  getRootElement()
    {
       return rootElement;
    }
@@ -970,7 +970,7 @@ public class SVG
    {
       Length  w = this.rootElement.width;
       Length  h = this.rootElement.height;
-      
+
       if (w == null || w.isZero() || w.unit==Unit.percent || w.unit==Unit.em || w.unit==Unit.ex)
          return new Box(-1,-1,-1,-1);
 
@@ -1126,7 +1126,7 @@ public class SVG
                                                           | SPECIFIED_VIEWPORT_FILL_OPACITY | SPECIFIED_VECTOR_EFFECT;
    */
 
-   static class  Style implements Cloneable
+   public static class  Style implements Cloneable
    {
       // Which properties have been explicitly specified by this element
       long       specifiedFlags = 0;
@@ -1163,7 +1163,7 @@ public class SVG
       String     markerStart;
       String     markerMid;
       String     markerEnd;
-      
+
       Boolean    display;    // true if we should display
       Boolean    visibility; // true if visible
 
@@ -1180,11 +1180,30 @@ public class SVG
 
       SvgPaint   viewportFill;
       Float      viewportFillOpacity;
-      
+
       VectorEffect  vectorEffect;
 
       RenderQuality  imageRendering;
 
+      public SvgPaint getFill() {
+         return fill;
+      }
+
+      public Length getStrokeWidth() {
+         return strokeWidth;
+      }
+
+      public LineCap getStrokeLineCap() {
+         return strokeLineCap;
+      }
+
+      public LineJoin getStrokeLineJoin() {
+         return strokeLineJoin;
+      }
+
+      public Colour getColor() {
+         return color;
+      }
 
       static final int  FONT_WEIGHT_NORMAL = 400;
       static final int  FONT_WEIGHT_BOLD = 700;
@@ -1334,15 +1353,16 @@ public class SVG
 
 
    // What fill or stroke is
-   abstract static class SvgPaint implements Cloneable
+   public abstract static class SvgPaint implements Cloneable
    {
    }
 
 
-   static class Colour extends SvgPaint
+   public static class Colour extends SvgPaint
    {
+
       int colour;
-      
+
       static final Colour BLACK = new Colour(0xff000000);  // Black singleton - a common default value.
       static final Colour TRANSPARENT = new Colour(0);     // Transparent black
 
@@ -1350,7 +1370,11 @@ public class SVG
       {
          this.colour = val;
       }
-      
+
+      public int getColour() {
+         return colour;
+      }
+
       public String toString()
       {
          return String.format("#%08x", colour);
@@ -1362,11 +1386,11 @@ public class SVG
    static class CurrentColor extends SvgPaint
    {
       private static CurrentColor  instance = new CurrentColor();
-      
+
       private CurrentColor()
       {
       }
-      
+
       static CurrentColor  getInstance()
       {
          return instance;
@@ -1378,13 +1402,13 @@ public class SVG
    {
       String    href;
       SvgPaint  fallback;
-      
+
       PaintReference(String href, SvgPaint fallback)
       {
          this.href = href;
          this.fallback = fallback;
       }
-      
+
       public String toString()
       {
          return href + " " + fallback;
@@ -1392,7 +1416,7 @@ public class SVG
    }
 
 
-   static class Length implements Cloneable
+   public static class Length implements Cloneable
    {
       float  value;
       Unit   unit;
@@ -1409,7 +1433,7 @@ public class SVG
          this.unit = Unit.px;
       }
 
-      float floatValue()
+      public float floatValue()
       {
          return value;
       }
@@ -1537,7 +1561,7 @@ public class SVG
       Length  right;
       Length  bottom;
       Length  left;
-      
+
       CSSClipRect(Length top, Length right, Length bottom, Length left)
       {
          this.top = top;
@@ -1554,7 +1578,7 @@ public class SVG
 
 
    // Any object that can be part of the tree
-   static class SvgObject
+   public static class SvgObject
    {
       SVG           document;
       SvgContainer  parent;
@@ -1567,13 +1591,26 @@ public class SVG
 
 
    // Any object in the tree that corresponds to an SVG element
-   static abstract class SvgElementBase extends SvgObject
+   public static abstract class SvgElementBase extends SvgObject
    {
       String        id = null;
+
       Boolean       spacePreserve = null;
       Style         baseStyle = null;   // style defined by explicit style attributes in the element (eg. fill="black")
       Style         style = null;       // style expressed in a 'style' attribute (eg. style="fill:black")
       List<String>  classNames = null;  // contents of the 'class' attribute
+
+      public String getId() {
+         return id;
+      }
+
+      public Style getBaseStyle() {
+         return baseStyle;
+      }
+
+      public Style getStyle() {
+         return style;
+      }
 
       public String  toString()
       {
@@ -1583,7 +1620,7 @@ public class SVG
 
 
    // Any object in the tree that corresponds to an SVG element
-   static abstract class SvgElement extends SvgElementBase
+   public static abstract class SvgElement extends SvgElementBase
    {
       Box     boundingBox = null;
    }
@@ -1644,7 +1681,7 @@ public class SVG
    }
 
 
-   static abstract class SvgConditionalContainer extends SvgElement implements SvgContainer, SvgConditional
+   public static abstract class SvgConditionalContainer extends SvgElement implements SvgContainer, SvgConditional
    {
       List<SvgObject>  children = new ArrayList<>();
 
@@ -1700,7 +1737,7 @@ public class SVG
    }
 
 
-   static class Svg extends SvgViewBoxContainer
+   public static class Svg extends SvgViewBoxContainer
    {
       Length  x;
       Length  y;
@@ -1714,7 +1751,7 @@ public class SVG
 
 
    // An SVG element that can contain other elements.
-   static class Group extends SvgConditionalContainer implements HasTransform
+   public static class Group extends SvgConditionalContainer implements HasTransform
    {
       Matrix  transform;
 
@@ -1742,7 +1779,7 @@ public class SVG
 
    // One of the element types that can cause graphics to be drawn onto the target canvas.
    // Specifically: 'circle', 'ellipse', 'image', 'line', 'path', 'polygon', 'polyline', 'rect', 'text' and 'use'.
-   static abstract class GraphicsElement extends SvgConditionalElement implements HasTransform
+   public static abstract class GraphicsElement extends SvgConditionalElement implements HasTransform
    {
       Matrix  transform;
 
@@ -1751,7 +1788,7 @@ public class SVG
    }
 
 
-   static class Use extends Group
+   public static class Use extends Group
    {
       String  href;
       Length  x;
@@ -1764,17 +1801,22 @@ public class SVG
    }
 
 
-   static class Path extends GraphicsElement
+   public static class Path extends GraphicsElement
    {
+
       PathDefinition  d;
       Float           pathLength;
+
+      public PathDefinition getDefinition() {
+         return d;
+      }
 
       @Override
       String  getNodeName() { return "path"; }
    }
 
 
-   static class Rect extends GraphicsElement
+   public static class Rect extends GraphicsElement
    {
       Length  x;
       Length  y;
@@ -1788,18 +1830,30 @@ public class SVG
    }
 
 
-   static class Circle extends GraphicsElement
+   public static class Circle extends GraphicsElement
    {
       Length  cx;
       Length  cy;
       Length  r;
+
+      public Length getCx() {
+         return cx;
+      }
+
+      public Length getCy() {
+         return cy;
+      }
+
+      public Length getR() {
+         return r;
+      }
 
       @Override
       String  getNodeName() { return "circle"; }
    }
 
 
-   static class Ellipse extends GraphicsElement
+   public static class Ellipse extends GraphicsElement
    {
       Length  cx;
       Length  cy;
@@ -1811,7 +1865,7 @@ public class SVG
    }
 
 
-   static class Line extends GraphicsElement
+   public static class Line extends GraphicsElement
    {
       Length  x1;
       Length  y1;
@@ -1823,16 +1877,21 @@ public class SVG
    }
 
 
-   static class PolyLine extends GraphicsElement
+   public static class PolyLine extends GraphicsElement
    {
+
       float[]  points;
+
+      public float[] getPoints() {
+         return points;
+      }
 
       @Override
       String  getNodeName() { return "polyline"; }
    }
 
 
-   static class Polygon extends PolyLine
+   public static class Polygon extends PolyLine
    {
       @Override
       String  getNodeName() { return "polygon"; }
@@ -1843,14 +1902,14 @@ public class SVG
    interface  TextRoot
    {
    }
-   
+
 
    interface  TextChild
    {
       void      setTextRoot(TextRoot obj);
       TextRoot  getTextRoot();
    }
-   
+
 
    static abstract class  TextContainer extends SvgConditionalContainer
    {
@@ -1903,12 +1962,12 @@ public class SVG
       String  text;
 
       private TextRoot   textRoot;
-      
+
       TextSequence(String text)
       {
          this.text = text;
       }
-      
+
       public String  toString()
       {
          return "TextChild: '"+text+"'";
@@ -2165,7 +2224,7 @@ public class SVG
    }
 
 
-   static class PathDefinition implements PathInterface
+   public static class PathDefinition implements PathInterface
    {
       private byte[]   commands;
       private int      commandsLength = 0;
