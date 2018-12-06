@@ -1189,6 +1189,10 @@ public class SVG
          return fill;
       }
 
+      public SvgPaint getStroke() {
+         return stroke;
+      }
+
       public Length getStrokeWidth() {
          return strokeWidth;
       }
