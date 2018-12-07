@@ -24,19 +24,12 @@ import android.graphics.Matrix;
 import android.graphics.Picture;
 import android.graphics.RectF;
 import android.util.Log;
-
 import com.caverock.androidsvg.CSSParser.Ruleset;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * AndroidSVG is a library for reading, parsing and rendering SVG documents on Android devices.
@@ -2273,7 +2266,7 @@ public class SVG
    // Path definition
 
 
-   interface PathInterface
+   public interface PathInterface
    {
       void  moveTo(float x, float y);
       void  lineTo(float x, float y);
@@ -2400,7 +2393,7 @@ public class SVG
       }
 
 
-      void enumeratePath(PathInterface handler)
+      public void enumeratePath(PathInterface handler)
       {
          int  coordsPos = 0;
 

@@ -18,69 +18,17 @@ package com.caverock.androidsvg;
 
 
 import android.annotation.TargetApi;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.DashPathEffect;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.graphics.*;
 import android.graphics.Path;
-import android.graphics.PathMeasure;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
-
-import com.caverock.androidsvg.SVG.Box;
-import com.caverock.androidsvg.SVG.ClipPath;
-import com.caverock.androidsvg.SVG.Colour;
-import com.caverock.androidsvg.SVG.CurrentColor;
-import com.caverock.androidsvg.SVG.GradientElement;
-import com.caverock.androidsvg.SVG.GradientSpread;
-import com.caverock.androidsvg.SVG.Length;
-import com.caverock.androidsvg.SVG.Line;
-import com.caverock.androidsvg.SVG.Marker;
-import com.caverock.androidsvg.SVG.NotDirectlyRendered;
-import com.caverock.androidsvg.SVG.PaintReference;
-import com.caverock.androidsvg.SVG.PathDefinition;
-import com.caverock.androidsvg.SVG.PathInterface;
-import com.caverock.androidsvg.SVG.Pattern;
+import com.caverock.androidsvg.SVG.*;
 import com.caverock.androidsvg.SVG.Rect;
-import com.caverock.androidsvg.SVG.SolidColor;
-import com.caverock.androidsvg.SVG.Stop;
-import com.caverock.androidsvg.SVG.Style;
-import com.caverock.androidsvg.SVG.Style.FontStyle;
-import com.caverock.androidsvg.SVG.Style.RenderQuality;
-import com.caverock.androidsvg.SVG.Style.TextAnchor;
-import com.caverock.androidsvg.SVG.Style.TextDecoration;
-import com.caverock.androidsvg.SVG.Style.VectorEffect;
-import com.caverock.androidsvg.SVG.SvgContainer;
-import com.caverock.androidsvg.SVG.SvgElement;
-import com.caverock.androidsvg.SVG.SvgElementBase;
-import com.caverock.androidsvg.SVG.SvgLinearGradient;
-import com.caverock.androidsvg.SVG.SvgObject;
-import com.caverock.androidsvg.SVG.SvgPaint;
-import com.caverock.androidsvg.SVG.SvgRadialGradient;
-import com.caverock.androidsvg.SVG.TextContainer;
-import com.caverock.androidsvg.SVG.TextSequence;
-import com.caverock.androidsvg.SVG.Unit;
+import com.caverock.androidsvg.SVG.Style.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 /*
  * The rendering part of AndroidSVG.
@@ -2586,7 +2534,7 @@ public class SVGAndroidRenderer
     * we discovered that there are some arcs that fail due of a lack of precision. So we have switched back to doubles.
     */
 
-   private static void arcTo(float lastX, float lastY, float rx, float ry, float angle, boolean largeArcFlag, boolean sweepFlag, float x, float y, PathInterface pather)
+   public static void arcTo(float lastX, float lastY, float rx, float ry, float angle, boolean largeArcFlag, boolean sweepFlag, float x, float y, PathInterface pather)
    {
       if (lastX == x && lastY == y) {
          // If the endpoints (x, y) and (x0, y0) are identical, then this
