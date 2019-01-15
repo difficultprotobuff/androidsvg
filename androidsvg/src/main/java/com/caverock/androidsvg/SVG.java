@@ -1406,6 +1406,14 @@ public class SVG
          this.fallback = fallback;
       }
 
+      public String getHref() {
+         return href;
+      }
+
+      public SvgPaint getFallback() {
+         return fallback;
+      }
+
       public String toString()
       {
          return href + " " + fallback;
