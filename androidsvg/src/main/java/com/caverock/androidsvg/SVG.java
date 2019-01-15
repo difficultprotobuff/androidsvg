@@ -928,7 +928,7 @@ public class SVG
    }
 
 
-   SvgObject  resolveIRI(String iri)
+   public SvgObject  resolveIRI(String iri)
    {
       if (iri == null)
          return null;
@@ -1395,7 +1395,7 @@ public class SVG
    }
 
 
-   static class PaintReference extends SvgPaint
+   public static class PaintReference extends SvgPaint
    {
       String    href;
       SvgPaint  fallback;
