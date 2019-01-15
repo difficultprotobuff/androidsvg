@@ -115,7 +115,7 @@ public class SVG
 
 
    @SuppressWarnings("unused")
-   enum GradientSpread
+   public enum GradientSpread
    {
       pad,
       reflect,
@@ -1592,6 +1592,14 @@ public class SVG
       {
          return "";
       }
+
+       public SVG getDocument() {
+           return document;
+       }
+
+       public SvgContainer getParent() {
+           return parent;
+       }
    }
 
 
@@ -2101,7 +2109,7 @@ public class SVG
    }
 
 
-   static abstract class GradientElement extends SvgElementBase implements SvgContainer
+   public static abstract class GradientElement extends SvgElementBase implements SvgContainer
    {
       List<SvgObject> children = new ArrayList<>();
 
@@ -2124,6 +2132,18 @@ public class SVG
          else
             throw new SVGParseException("Gradient elements cannot contain "+elem+" elements.");
       }
+
+       public Matrix getGradientTransform() {
+           return gradientTransform;
+       }
+
+       public GradientSpread getSpreadMethod() {
+           return spreadMethod;
+       }
+
+       public String getHref() {
+           return href;
+       }
    }
 
 
@@ -2142,7 +2162,7 @@ public class SVG
    }
 
 
-   static class SvgLinearGradient extends GradientElement
+   public static class SvgLinearGradient extends GradientElement
    {
       Length  x1;
       Length  y1;
@@ -2151,10 +2171,26 @@ public class SVG
 
       @Override
       String  getNodeName() { return "linearGradient"; }
+
+       public Length getX1() {
+           return x1;
+       }
+
+       public Length getY1() {
+           return y1;
+       }
+
+       public Length getX2() {
+           return x2;
+       }
+
+       public Length getY2() {
+           return y2;
+       }
    }
 
 
-   static class SvgRadialGradient extends GradientElement
+    public static class SvgRadialGradient extends GradientElement
    {
       Length  cx;
       Length  cy;
@@ -2164,6 +2200,26 @@ public class SVG
 
       @Override
       String  getNodeName() { return "radialGradient"; }
+
+       public Length getCx() {
+           return cx;
+       }
+
+       public Length getCy() {
+           return cy;
+       }
+
+       public Length getR() {
+           return r;
+       }
+
+       public Length getFx() {
+           return fx;
+       }
+
+       public Length getFy() {
+           return fy;
+       }
    }
 
 
