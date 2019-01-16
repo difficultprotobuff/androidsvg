@@ -2144,6 +2144,10 @@ public class SVG
        public String getHref() {
            return href;
        }
+
+      public Boolean getGradientUnitsAreUser() {
+         return gradientUnitsAreUser;
+      }
    }
 
 
