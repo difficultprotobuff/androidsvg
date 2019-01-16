@@ -2151,7 +2151,7 @@ public class SVG
    }
 
 
-   static class Stop extends SvgElementBase implements SvgContainer
+   public static class Stop extends SvgElementBase implements SvgContainer
    {
       Float  offset;
 
@@ -2163,6 +2163,10 @@ public class SVG
       public void addChild(SvgObject elem) { /* do nothing */ }
       @Override
       String  getNodeName() { return "stop"; }
+
+      public Float getOffset() {
+         return offset;
+      }
    }
 
 
