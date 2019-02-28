@@ -2372,7 +2372,7 @@ public class SVG
       private static final byte  CLOSE   = 8;
 
 
-      PathDefinition()
+      public PathDefinition()
       {
          this.commands = new byte[8];
          this.coords = new float[16];
