@@ -1150,6 +1150,14 @@ public class SVG {
             return stopOpacity;
         }
 
+        public SvgPaint getSolidColor() {
+            return solidColor;
+        }
+
+        public Float getSolidOpacity() {
+            return solidOpacity;
+        }
+
         static final int FONT_WEIGHT_NORMAL = 400;
         static final int FONT_WEIGHT_BOLD = 700;
         static final int FONT_WEIGHT_LIGHTER = -1;
