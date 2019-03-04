@@ -2303,7 +2303,7 @@ public class SVG
    }
 
 
-   static class SolidColor extends SvgElementBase implements SvgContainer
+   public static class SolidColor extends SvgElementBase implements SvgContainer
    {
       // Not needed right now. Colour is set in this.baseStyle.
       //public Length  solidColor;
@@ -2316,7 +2316,7 @@ public class SVG
       @Override
       public void addChild(SvgObject elem) { /* do nothing */ }
       @Override
-      String  getNodeName() { return "solidColor"; }
+      public String  getNodeName() { return "solidColor"; }
    }
 
 
