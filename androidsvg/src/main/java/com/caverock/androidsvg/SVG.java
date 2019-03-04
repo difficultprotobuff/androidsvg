@@ -2150,6 +2150,10 @@ public class SVG {
             this.spreadMethod = spreadMethod;
         }
 
+        public void setChildren(List<SvgObject> children) {
+            this.children = children;
+        }
+
         public void setHref(String href) {
             this.href = href;
         }
