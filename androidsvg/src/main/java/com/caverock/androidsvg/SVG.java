@@ -1158,7 +1158,15 @@ public class SVG {
             return solidOpacity;
         }
 
-        static final int FONT_WEIGHT_NORMAL = 400;
+		public Boolean getDisplay() {
+			return display;
+		}
+
+		public Boolean getVisibility() {
+			return visibility;
+		}
+
+		static final int FONT_WEIGHT_NORMAL = 400;
         static final int FONT_WEIGHT_BOLD = 700;
         static final int FONT_WEIGHT_LIGHTER = -1;
         static final int FONT_WEIGHT_BOLDER = +1;
