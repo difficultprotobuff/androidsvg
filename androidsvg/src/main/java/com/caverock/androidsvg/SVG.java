@@ -1720,12 +1720,12 @@ public class SVG {
     }
 
 
-    interface HasTransform {
+    public interface HasTransform {
         void setTransform(Matrix matrix);
     }
 
 
-    static abstract class SvgPreserveAspectRatioContainer extends SvgConditionalContainer {
+    public static abstract class SvgPreserveAspectRatioContainer extends SvgConditionalContainer {
         PreserveAspectRatio preserveAspectRatio = null;
     }
 
@@ -2342,13 +2342,13 @@ public class SVG {
     }
 
 
-    static class Image extends SvgPreserveAspectRatioContainer implements HasTransform {
-        String href;
-        Length x;
-        Length y;
-        Length width;
-        Length height;
-        Matrix transform;
+    public static class Image extends SvgPreserveAspectRatioContainer implements HasTransform {
+        public String href;
+        public Length x;
+        public Length y;
+        public Length width;
+        public Length height;
+        public Matrix transform;
 
         @Override
         public void setTransform(Matrix transform) {
