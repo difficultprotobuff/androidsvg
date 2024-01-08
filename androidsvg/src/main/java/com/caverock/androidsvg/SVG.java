@@ -741,7 +741,7 @@ public class SVG
       return base.getRootElement();
    }
 
-   Collection<SVGBase.SvgObject> getElementsAt(float x, float y) {
+   public Collection<SVGBase.SvgObject> getElementsAt(float x, float y) {
       return base.getElementsAt(x, y, true);
    }
 }
